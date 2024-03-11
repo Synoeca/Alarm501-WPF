@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Alarm501.AlarmListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Alarm501"
+             xmlns:data="clr-namespace:Alarm501"
+             d:DataContext="{d:DesignInstance Type=local:Alarm}"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="250">
+    <Grid x:Name="AlarmListGrid" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3">
+        <ListView x:Name="AlarmsListView" ScrollViewer.VerticalScrollBarVisibility="Visible" FontSize="19" ItemsSource="{Binding}" BorderThickness="1,1,1,1" SizeChanged="AutoResizeGridColumns" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="AlarmsListViewSelectionChanged">
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Label Content="Time" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" Foreground="#004DC8" FontWeight="DemiBold"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Label Content="{Binding DisplayTime}" FontSize="15" FontStretch="Normal" FontWeight="DemiBold" Padding="5,5,5,5"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Label Content="AM/PM" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" Foreground="#004DC8" FontWeight="DemiBold"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" HorizontalAlignment="Center">
+                                    <Label Content="{Binding DisplayIsAm}" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" FontWeight="DemiBold"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Label Content="On/Off" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" Foreground="#004DC8" FontWeight="DemiBold"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Label Content="{Binding DisplayIsActivated}" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" FontWeight="DemiBold"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Label Content="" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" Foreground="#004DC8" FontWeight="DemiBold"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Viewbox StretchDirection="DownOnly" VerticalAlignment="Stretch">
+                                    <Button Content="X" Command="{Binding ElementName=AlarmsListView,Path=DataContext.RemoveSubjectCommand}"  ButtonBase.Click="RemoveItem" Padding="5,0,5,0" Background="IndianRed" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Viewbox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <!-- More GridViewColumns if needed -->
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

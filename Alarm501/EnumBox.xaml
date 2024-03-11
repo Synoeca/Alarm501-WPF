@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Alarm501.EnumBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Alarm501"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200" Loaded="EnumboxLoaded">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Name="enumObjProvider" x:Key="enums" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:AlarmSound"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <ListBox x:Name="uxRadioButtonBox" ItemsSource="{Binding Source={StaticResource enums}}" SelectedItem="{Binding Path=Enums, RelativeSource={RelativeSource AncestorType=local:EnumBox}}" BorderBrush="{x:Null}"/>
+    </StackPanel>
+</UserControl>

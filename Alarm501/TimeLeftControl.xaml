@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Alarm501.TimeLeftControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Alarm501"
+             mc:Ignorable="d" 
+             xmlns:data="clr-namespace:Alarm501"
+             d:DataContext="{d:DesignInstance Type=local:AlarmItem}"
+             d:DesignHeight="50" d:DesignWidth="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="0" StretchDirection="DownOnly" HorizontalAlignment="Center">
+            <Label x:Name="uxSoundLabel" Content="" FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" Foreground="#004DC8" FontWeight="DemiBold"/>
+        </Viewbox>
+        <Viewbox Grid.Row="1" StretchDirection="DownOnly" HorizontalAlignment="Center">
+            <Label x:Name="uxTimeLeftLabel" Content="{Binding DisplayTimeLeft}" ContentStringFormat='Time left: {0}' FontSize="15" FontStretch="Normal" HorizontalAlignment="Left" Foreground="#004DC8" FontWeight="DemiBold"/>
+        </Viewbox>
+    </Grid>
+</UserControl>
