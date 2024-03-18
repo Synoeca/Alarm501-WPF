@@ -365,6 +365,8 @@ namespace Alarm501
 			{
 				UxSoundDisplayControl.Visibility = Visibility.Collapsed;
 				UxTimeLeftControl.Visibility = Visibility.Visible;
+				UxSnoozeControl.IsEnabled = false;
+				UxStopControl.IsEnabled = false;
 			}
 		}
 
