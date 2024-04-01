@@ -1,12 +1,17 @@
 # CIS501 Project-02
 # Alarm501
 
-### Target framework: .NET 8.0
+Target framework: .NET 8.0
 
-|<img width="207" alt="On" src="https://github.com/sahuarolabs/project-02-alarm501-Synoeca/assets/64255510/1da8c434-1074-412d-9f43-7e4223892f70">|<img width="209" alt="Alarm" src="https://github.com/sahuarolabs/project-02-alarm501-Synoeca/assets/64255510/d8c5d564-6fdc-4ab6-8b9a-4b27d2f01958">|
+
+
+
+
+
+|<img width="207" alt="on" src="https://github.com/Synoeca/Alarm501-WPF/assets/64255510/b91223b5-f597-4810-8624-7011d954a84c">|<img width="209" alt="WentOff" src="https://github.com/Synoeca/Alarm501-WPF/assets/64255510/e6d34b58-0541-46bb-ab34-700b2fe01daa">|
 |:-:|:-:|
 |On|Alarm|
 
-|<img width="207" alt="Setting" src="https://github.com/sahuarolabs/project-02-alarm501-Synoeca/assets/64255510/c28a14a1-66b5-4a8b-be6c-65c533261189">|<img width="282" alt="Add" src="https://github.com/sahuarolabs/project-02-alarm501-Synoeca/assets/64255510/4ede0b70-0923-432c-ba13-314490527395">|
+|<img width="207" alt="Option" src="https://github.com/Synoeca/Alarm501-WPF/assets/64255510/3c7acb8d-bc3d-4bb8-ae35-f72e2528e023">|<img width="282" alt="AddEditAlarm" src="https://github.com/Synoeca/Alarm501-WPF/assets/64255510/76894cb5-74c7-49b8-9093-af50f744d384">|
 |:-:|:-:|
 |Setting|Add|
